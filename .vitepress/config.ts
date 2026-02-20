@@ -18,6 +18,10 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/CuteLeaf/Firefly' },
     ],
+    footer: {
+      message: 'Released under the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> License.',
+      copyright: 'Copyright © 2026 <a href="https://github.com/CuteLeaf" target="_blank">CuteLeaf</a> | <a href="https://beian.miit.gov.cn/" target="_blank">桂ICP备20005240号-7</a>',
+    },
   },
 
   locales: {
