@@ -1,0 +1,128 @@
+# 背景壁纸
+
+背景壁纸配置控制站点的背景图片显示模式和相关效果。
+
+## 配置文件
+
+`src/config/backgroundWallpaper.ts`
+
+## 壁纸模式
+
+| 属性 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `mode` | `string` | `"banner"` | 壁纸模式：`"banner"` 横幅、`"overlay"` 全屏透明、`"none"` 纯色背景 |
+| `switchable` | `boolean` | `true` | 是否允许用户通过导航栏切换壁纸模式 |
+
+## 图片配置
+
+`src` 属性支持多种格式：
+
+### 分别设置桌面端和移动端
+
+```ts
+src: {
+  desktop: "assets/images/DesktopWallpaper/d1.avif",
+  mobile: "assets/images/MobileWallpaper/m1.avif",
+},
+```
+
+### 多张图片随机显示
+
+```ts
+src: {
+  desktop: [
+    "assets/images/DesktopWallpaper/d1.avif",
+    "assets/images/DesktopWallpaper/d2.avif",
+    "assets/images/DesktopWallpaper/d3.avif",
+  ],
+  mobile: [
+    "assets/images/MobileWallpaper/m1.avif",
+    "assets/images/MobileWallpaper/m2.avif",
+    "assets/images/MobileWallpaper/m3.avif",
+  ],
+},
+```
+
+### 使用随机图 API
+
+```ts
+src: {
+  desktop: "https://t.alcy.cc/pc",
+  mobile: "https://t.alcy.cc/mp",
+},
+```
+
+::: tip
+图片路径支持三种格式：
+1. **public 目录**（以 `/` 开头）：不会被优化
+2. **src 目录**（不以 `/` 开头）：自动优化（推荐）
+3. **远程 URL**：不会被优化，请确保图片体积足够小
+:::
+
+## Banner 模式配置
+
+### 图片位置
+
+| 属性 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `banner.position` | `string` | `"0% 20%"` | CSS `object-position` 值 |
+
+### 首页横幅文字
+
+| 属性 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `banner.homeText.enable` | `boolean` | `true` | 是否启用横幅文字 |
+| `banner.homeText.switchable` | `boolean` | `true` | 是否允许用户通过控制面板切换显示 |
+| `banner.homeText.title` | `string` | `"Lovely firefly!"` | 主标题 |
+| `banner.homeText.titleSize` | `string` | `"3.8rem"` | 主标题字体大小 |
+| `banner.homeText.subtitle` | `string \| string[]` | - | 副标题，支持单个或多个 |
+| `banner.homeText.subtitleSize` | `string` | `"1.5rem"` | 副标题字体大小 |
+
+### 打字机效果
+
+| 属性 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `banner.homeText.typewriter.enable` | `boolean` | `true` | 是否启用打字机效果 |
+| `banner.homeText.typewriter.speed` | `number` | `100` | 打字速度（毫秒） |
+| `banner.homeText.typewriter.deleteSpeed` | `number` | `50` | 删除速度（毫秒） |
+| `banner.homeText.typewriter.pauseTime` | `number` | `2000` | 完全显示后的暂停时间（毫秒） |
+
+::: info
+- 打字机**开启** → 循环显示所有副标题
+- 打字机**关闭** → 每次刷新随机显示一条副标题
+:::
+
+### 图片来源
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `banner.credit.enable` | `boolean \| { desktop, mobile }` | 是否显示来源文本 |
+| `banner.credit.text` | `string \| { desktop, mobile }` | 来源文本 |
+| `banner.credit.url` | `string \| { desktop, mobile }` | 原始作品链接 |
+
+### 导航栏透明模式
+
+| 属性 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `banner.navbar.transparentMode` | `string` | `"semifull"` | 透明模式：`"semi"` 半透明、`"full"` 完全透明、`"semifull"` 动态透明 |
+| `banner.navbar.enableBlur` | `boolean` | `true` | 是否开启毛玻璃模糊效果 |
+| `banner.navbar.blur` | `number` | `3` | 毛玻璃模糊度 |
+
+### 水波纹动画
+
+| 属性 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `banner.waves.enable` | `boolean \| { desktop, mobile }` | `{ desktop: true, mobile: true }` | 是否启用水波纹动画 |
+| `banner.waves.switchable` | `boolean` | `true` | 是否允许用户通过控制面板切换 |
+
+::: warning
+水波纹动画会影响页面性能，请根据需要开启。
+:::
+
+## Overlay 模式配置
+
+| 属性 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `overlay.zIndex` | `number` | `-1` | 层级 |
+| `overlay.opacity` | `number` | `0.8` | 壁纸透明度（0-1） |
+| `overlay.blur` | `number` | `1` | 背景模糊程度（px） |
