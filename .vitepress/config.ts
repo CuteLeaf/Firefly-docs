@@ -7,11 +7,11 @@ export default defineConfig({
   lastUpdated: true,
 
   head: [
-    ['link', { rel: 'icon', href: '/images/firefly.png' }],
+    ['link', { rel: 'icon', href: '/images/logo.png' }],
   ],
 
   themeConfig: {
-    logo: '/images/firefly.png',
+    logo: '/images/logo.png',
     search: {
       provider: 'local',
     },
