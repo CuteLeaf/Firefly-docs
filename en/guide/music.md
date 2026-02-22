@@ -20,8 +20,6 @@ Firefly includes a built-in music player supporting Meting API (online platforms
 The music player has two display locations:
 1. **Sidebar**: Disable by setting the music component `enable` to `false` in `sidebarConfig.ts`
 2. **Navbar**: Disable by setting `showInNavbar` to `false`
-
-It's recommended to use only one of the two.
 :::
 
 ## Meting API Mode

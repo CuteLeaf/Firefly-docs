@@ -20,8 +20,6 @@ Firefly 内置了音乐播放器，支持 Meting API（在线音乐平台）和�
 音乐播放器有两个显示位置：
 1. **侧边栏**：在 `sidebarConfig.ts` 中将音乐组件 `enable` 设为 `false` 可禁用
 2. **导航栏**：将 `showInNavbar` 设为 `false` 可禁用
-
-建议二选一，关闭其中一个即可。
 :::
 
 ## Meting API 模式

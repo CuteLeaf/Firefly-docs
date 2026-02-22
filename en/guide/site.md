@@ -36,6 +36,18 @@ export const siteConfig: SiteConfig = {
 | `themeColor.fixed` | `boolean` | `false` | Hide theme color picker from visitors |
 | `themeColor.defaultMode` | `string` | `"system"` | Default mode: `"light"`, `"dark"`, `"system"` |
 
+## Page Width
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `pageWidth` | `number` | `100` | Maximum page width in `rem`. Larger values make the content area wider |
+
+```ts
+// Page width (unit: rem)
+// Increase the value to make the content area wider
+pageWidth: 100,
+```
+
 ## Card Style
 
 | Property | Type | Default | Description |
