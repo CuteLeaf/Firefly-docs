@@ -57,7 +57,7 @@ Vercel 支持自动部署：每次推送到主分支时会自动触发构建和�
 ### 方法一：通过 Netlify 控制台
 
 1. 登录 [Netlify](https://app.netlify.com/)
-2. 点击 **Add new site → Import an existing project**
+2. 点击 **Add new project → Import an existing project**
 3. 连接 GitHub 仓库
 4. 配置构建设置：
    - **Build command**: `pnpm build`
@@ -150,17 +150,54 @@ export default defineConfig({
 ```
 
 ::: warning
-如果使用自定义域名，`base` 无需设置。如果仓库名为 `<username>.github.io`，`base` 也无需设置。
+若使用自定义域名，或仓库名为 `<username>.github.io`，`base` 都无需设置。
 :::
+
+## Cloudflare Workers
+
+### 方法一：通过 Cloudflare 仪表盘
+
+1. 在项目根目录创建`wrangler.toml`：
+  ```toml
+  name = "firefly"
+  compatibility_date = "YYYY-MM-DD" # 更为今日
+  
+  [assets]
+  directory = "./dist"
+  
+  [vars]
+  NODE_VERSION = "22"
+  ```
+2. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)
+3. 进入 **Compute → Workers & Pages → Create application → Connect Github**
+4. 选择 GitHub 仓库
+5. 配置构建设置：
+  - **Build command**: `pnpm build`
+  - **Deploy command**: `npx wrangler deploy`
+6. 点击 **Deploy**
+
+### 方法二：使用 Wrangler CLI
+
+```bash
+# 安装 Wrangler
+pnpm add -g wrangler
+
+# 登录
+wrangler login
+
+# 构建并部署
+pnpm build
+wrangler deploy dist
+```
 
 ## Cloudflare Pages
 
 [Cloudflare Pages](https://pages.cloudflare.com/) 提供免费的静态站点托管。
 
-### 方法一：通过 Cloudflare 控制台
+### 方法一：通过 Cloudflare 仪表盘
 
 1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)
-2. 进入 **Workers & Pages → Create → Pages → Connect to Git**
+2. 进入 **Compute** → **Workers & Pages → Create application → Pages → Connect to Git**
 3. 选择 GitHub 仓库
 4. 配置构建设置：
    - **Framework preset**: `Astro`
