@@ -150,7 +150,7 @@ export default defineConfig({
 ```
 
 ::: warning
-If using a custom domain, `base` is not needed. If the repo is named `<username>.github.io`, `base` is also not needed.
+No editing needed, if the GitHub Pages set a custom domain or the repo is named `<username>.github.io`
 :::
 
 ## Cloudflare Workers
