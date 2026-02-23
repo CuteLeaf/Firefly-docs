@@ -155,6 +155,8 @@ export default defineConfig({
 
 ## Cloudflare Workers
 
+[Cloudflare Workers](https://workers.cloudflare.com)提供免费的 Serverless 边缘计算，其也能够托管静态站点。
+
 ### 方法一：通过 Cloudflare 仪表盘
 
 1. 在项目根目录创建`wrangler.toml`：
@@ -172,8 +174,8 @@ export default defineConfig({
 3. 进入 **Compute → Workers & Pages → Create application → Connect Github**
 4. 选择 GitHub 仓库
 5. 配置构建设置：
-  - **Build command**: `pnpm build`
-  - **Deploy command**: `npx wrangler deploy`
+   - **Build command**: `pnpm build`
+   - **Deploy command**: `npx wrangler deploy`
 6. 点击 **Deploy**
 
 ### 方法二：使用 Wrangler CLI

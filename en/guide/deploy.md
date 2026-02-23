@@ -57,7 +57,7 @@ Vercel supports automatic deployments: every push to the main branch triggers a 
 ### Option 1: Via Netlify Dashboard
 
 1. Log in to [Netlify](https://app.netlify.com/)
-2. Click **Add new site → Import an existing project**
+2. Click **Add new project → Import an existing project**
 3. Connect your GitHub repository
 4. Configure build settings:
    - **Build command**: `pnpm build`
@@ -150,8 +150,47 @@ export default defineConfig({
 ```
 
 ::: warning
-If using a custom domain, `base` is not needed. If the repo is named `<username>.github.io`, `base` is also not needed.
+No editing needed, if the GitHub Pages set a custom domain or the repo is named `<username>.github.io`
 :::
+
+## Cloudflare Workers
+
+[Cloudflare Workers](https://workers.cloudflare.com) offers free serverless edge computing. That can alse use to host static site.
+
+### Option 1: Via Cloudflare Dashboard
+
+1. Create `wrangler.toml` in the project root：
+  ```toml
+  name = "firefly"
+  compatibility_date = "YYYY-MM-DD" # edit to today
+  
+  [assets]
+  directory = "./dist"
+  
+  [vars]
+  NODE_VERSION = "22"
+  ```
+2. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com/)
+3. Enter **Compute → Workers & Pages**, click **Create application → Connect Github**
+4. Select your GitHub repository
+5. Configure build settings:
+   - **Build command**: `pnpm build`
+   - **Deploy command**: `npx wrangler deploy`
+6. Click **Deploy**
+
+### Option 2: Using Wrangler CLI
+
+```bash
+# Install Wrangler
+pnpm add -g wrangler
+
+# Login
+wrangler login
+
+# Build & deploy
+pnpm build
+wrangler deploy dist
+```
 
 ## Cloudflare Pages
 
@@ -160,7 +199,7 @@ If using a custom domain, `base` is not needed. If the repo is named `<username>
 ### Option 1: Via Cloudflare Dashboard
 
 1. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com/)
-2. Go to **Workers & Pages → Create → Pages → Connect to Git**
+2. Enter **Compute → Workers & Pages**, click **Create application → Pages → Connect to Git**
 3. Select your GitHub repository
 4. Configure build settings:
    - **Framework preset**: `Astro`
@@ -178,7 +217,7 @@ pnpm add -g wrangler
 # Login
 wrangler login
 
-# Build and deploy
+# Build & deploy
 pnpm build
 wrangler pages deploy dist
 ```
