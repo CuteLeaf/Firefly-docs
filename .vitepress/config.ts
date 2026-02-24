@@ -58,11 +58,22 @@ export default defineConfig({
             {
               text: '功能配置',
               items: [
-                { text: '评论系统', link: '/zh/guide/comment' },
-                { text: '音乐播放器', link: '/zh/guide/music' },
                 { text: '字体', link: '/zh/guide/font' },
-                { text: '封面图片', link: '/zh/guide/cover-image' },
                 { text: '代码块', link: '/zh/guide/code-block' },
+                { text: '评论系统', link: '/zh/guide/comment' },
+                { text: '封面图片', link: '/zh/guide/cover-image' },
+                { text: '音乐播放器', link: '/zh/guide/music' },
+                
+                
+                
+              ],
+            },
+            {
+              text: '页面配置',
+              items: [
+                { text: '友链', link: '/zh/guide/friends' },
+                { text: '相册', link: '/zh/guide/gallery' },
+                { text: '赞助', link: '/zh/guide/sponsor' },
               ],
             },
             {
@@ -71,10 +82,8 @@ export default defineConfig({
                 { text: '樱花特效', link: '/zh/guide/sakura' },
                 { text: '公告', link: '/zh/guide/announcement' },
                 { text: '页脚', link: '/zh/guide/footer' },
-                { text: '许可证', link: '/zh/guide/license' },
-                { text: '友链', link: '/zh/guide/friends' },
-                { text: '赞助', link: '/zh/guide/sponsor' },
                 { text: '广告', link: '/zh/guide/ad' },
+                { text: '许可证', link: '/zh/guide/license' },
                 { text: 'Live2D / Spine 模型', link: '/zh/guide/pio' },
               ],
             },
@@ -129,11 +138,19 @@ export default defineConfig({
             {
               text: 'Feature Configuration',
               items: [
+                { text: 'Font', link: '/en/guide/font' },
+                { text: 'Code Block', link: '/en/guide/code-block' },
                 { text: 'Comment System', link: '/en/guide/comment' },
                 { text: 'Music Player', link: '/en/guide/music' },
-                { text: 'Font', link: '/en/guide/font' },
                 { text: 'Cover Image', link: '/en/guide/cover-image' },
-                { text: 'Code Block', link: '/en/guide/code-block' },
+              ],
+            },
+            {
+              text: 'Page Configuration',
+              items: [
+                { text: 'Friends', link: '/en/guide/friends' },
+                { text: 'Gallery', link: '/en/guide/gallery' },
+                { text: 'Sponsor', link: '/en/guide/sponsor' },
               ],
             },
             {
@@ -142,10 +159,8 @@ export default defineConfig({
                 { text: 'Sakura Effect', link: '/en/guide/sakura' },
                 { text: 'Announcement', link: '/en/guide/announcement' },
                 { text: 'Footer', link: '/en/guide/footer' },
-                { text: 'License', link: '/en/guide/license' },
-                { text: 'Friends', link: '/en/guide/friends' },
-                { text: 'Sponsor', link: '/en/guide/sponsor' },
                 { text: 'Advertisement', link: '/en/guide/ad' },
+                { text: 'License', link: '/en/guide/license' },
                 { text: 'Live2D / Spine Model', link: '/en/guide/pio' },
               ],
             },
