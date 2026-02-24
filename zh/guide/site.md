@@ -123,7 +123,7 @@ favicon: [
 | `postListLayout.defaultMode` | `string` | `"list"` | 默认布局：`"list"` 列表模式，`"grid"` 网格模式 |
 | `postListLayout.allowSwitch` | `boolean` | `true` | 是否允许用户切换布局 |
 | `postListLayout.grid.masonry` | `boolean` | `false` | 是否开启瀑布流布局 |
-| `postListLayout.grid.columns` | `number` | `3` | 网格列数：`2` 或 `3`（3 列仅在单侧边栏或无侧边栏时生效） |
+| `postListLayout.grid.columnWidth` | `number` | `320` | 网格模式卡片最小宽度(px)，浏览器根据容器宽度自动计算列数 |
 
 ## 分页配置
 

@@ -126,3 +126,4 @@ src: {
 | `overlay.zIndex` | `number` | `-1` | 层级 |
 | `overlay.opacity` | `number` | `0.8` | 壁纸透明度（0-1） |
 | `overlay.blur` | `number` | `1` | 背景模糊程度（px） |
+| `overlay.cardOpacity` | `number` | `0.6` | 卡片背景透明度（0-1），值越小卡片越透明 |

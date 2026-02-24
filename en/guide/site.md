@@ -115,7 +115,7 @@ Restart the dev server after changing this setting.
 | `postListLayout.defaultMode` | `string` | `"list"` | Default layout: `"list"` or `"grid"` |
 | `postListLayout.allowSwitch` | `boolean` | `true` | Allow users to switch layout |
 | `postListLayout.grid.masonry` | `boolean` | `false` | Enable masonry layout |
-| `postListLayout.grid.columns` | `number` | `3` | Grid columns: `2` or `3` (3-column only works with single or no sidebar) |
+| `postListLayout.grid.columnWidth` | `number` | `320` | Minimum card width in grid mode (px). The browser automatically calculates column count based on container width |
 
 ## Pagination
 

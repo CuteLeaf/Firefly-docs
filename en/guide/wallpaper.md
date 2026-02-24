@@ -124,3 +124,4 @@ Wave animation affects page performance. Enable based on your needs.
 | `overlay.zIndex` | `number` | `-1` | Z-index |
 | `overlay.opacity` | `number` | `0.8` | Wallpaper opacity (0-1) |
 | `overlay.blur` | `number` | `1` | Background blur (px) |
+| `overlay.cardOpacity` | `number` | `0.6` | Card background opacity (0-1). Lower values make cards more transparent |

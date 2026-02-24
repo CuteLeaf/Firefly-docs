@@ -55,7 +55,6 @@ methods: [
 | `name` | `string` | 是 | 赞助者名称 |
 | `amount` | `string` | 否 | 赞助金额 |
 | `date` | `string` | 否 | 赞助日期（ISO 格式） |
-| `message` | `string` | 否 | 留言 |
 
 ```ts
 sponsors: [
@@ -63,7 +62,6 @@ sponsors: [
     name: "夏叶",
     amount: "¥50",
     date: "2025-10-01",
-    message: "感谢分享！",
   },
   {
     name: "匿名用户",

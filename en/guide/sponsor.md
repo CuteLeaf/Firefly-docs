@@ -34,7 +34,6 @@ The sponsor configuration manages the sponsor page content, including donation m
 | `name` | `string` | Yes | Sponsor name |
 | `amount` | `string` | No | Donation amount |
 | `date` | `string` | No | Date (ISO format) |
-| `message` | `string` | No | Message |
 
 ```ts
 sponsors: [
@@ -42,7 +41,6 @@ sponsors: [
     name: "John Doe",
     amount: "$10",
     date: "2025-10-01",
-    message: "Great work!",
   },
 ],
 ```
