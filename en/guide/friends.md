@@ -10,7 +10,9 @@ The friends configuration manages the friend links page display.
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
-| `columns` | `number` | `2` | Display columns: `2` or `3` |
+| `title` | `string` | `""` | Page title, uses i18n translation if empty |
+| `description` | `string` | `""` | Page description, uses i18n translation if empty |
+| `showCustomContent` | `boolean` | `true` | Whether to show custom content at the bottom (friends.mdx) |
 
 ## Friend Link Properties
 
@@ -27,6 +29,15 @@ The friends configuration manages the friend links page display.
 ## Example
 
 ```ts
+export const friendsPageConfig: FriendsPageConfig = {
+  // Page title, uses i18n translation if empty
+  title: "",
+  // Page description, uses i18n translation if empty
+  description: "",
+  // Whether to show custom content (friends.mdx)
+  showCustomContent: true,
+};
+
 export const friendsConfig: FriendLink[] = [
   {
     title: "My Friend",
@@ -40,8 +51,33 @@ export const friendsConfig: FriendLink[] = [
 ];
 ```
 
+## Custom Content
+
+The friends page supports custom content at the bottom via an MDX file located at `src/content/spec/friends.mdx`.
+
+This file uses MDX format (enhanced Markdown) and supports defining variables via `export` at the top of the file for easy customization of site info and notes:
+
+```js
+// Site info (for display and copy)
+export const site = {
+  name: "Your Site Name",
+  desc: "Your site description",
+  url: "https://your-site.com",
+  avatar: "https://your-avatar-url.com/avatar.jpg",
+  email: "your@email.com",
+};
+
+// Notes list
+export const notes = [
+  { title: "Exchange Policy", content: "Please add our site to your friends page first" },
+  { title: "Link Maintenance", content: "Inaccessible or inappropriate sites will be removed" },
+];
+```
+
+Set `showCustomContent: false` in the config to hide the custom content section.
+
 ::: tip
+- The MDX file can be fully rewritten to match your preferences — the default layout is just a reference template
 - Set `enabled: false` to temporarily hide a friend link without deleting it
 - Links are sorted by `weight` in descending order
-- Custom content below the friends page can be written in `src/content/spec/friends.md`
 :::

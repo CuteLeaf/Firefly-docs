@@ -10,7 +10,9 @@
 
 | 属性 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| `columns` | `number` | `2` | 显示列数：`2` 或 `3` |
+| `title` | `string` | `""` | 页面标题，留空则使用 i18n 中的翻译 |
+| `description` | `string` | `""` | 页面描述，留空则使用 i18n 中的翻译 |
+| `showCustomContent` | `boolean` | `true` | 是否显示底部自定义内容（friends.mdx） |
 
 ## 友链项属性
 
@@ -27,6 +29,15 @@
 ## 配置示例
 
 ```ts
+export const friendsPageConfig: FriendsPageConfig = {
+  // 页面标题，如果留空则使用 i18n 中的翻译
+  title: "",
+  // 页面描述文本，如果留空则使用 i18n 中的翻译
+  description: "",
+  // 是否显示底部自定义内容（friends.mdx 中的内容）
+  showCustomContent: true,
+};
+
 export const friendsConfig: FriendLink[] = [
   {
     title: "夏夜流萤",
@@ -49,8 +60,33 @@ export const friendsConfig: FriendLink[] = [
 ];
 ```
 
+## 自定义内容
+
+友链页面底部支持通过 MDX 文件自定义内容，文件路径为 `src/content/spec/friends.mdx`。
+
+该文件采用 MDX 格式（Markdown 增强版），支持在文件顶部通过 `export` 定义变量，方便修改站点信息和注意事项：
+
+```js
+// 站点信息（用于展示和复制）
+export const site = {
+  name: "你的站点名称",
+  desc: "你的站点描述",
+  url: "https://your-site.com",
+  avatar: "https://your-avatar-url.com/avatar.jpg",
+  email: "your@email.com",
+};
+
+// 注意事项列表
+export const notes = [
+  { title: "互换原则", content: "请先将本站添加到您的友链页面" },
+  { title: "链接维护", content: "长期无法访问或内容违规将被移除" },
+];
+```
+
+如果不需要自定义内容，可在配置中设置 `showCustomContent: false` 来隐藏。
+
 ::: tip
+- 该 MDX 文件可以根据自己的喜好完全重写，默认提供的布局仅作为参考模板
 - 设置 `enabled: false` 可以暂时隐藏某个友链而不需要删除
 - 友链按 `weight` 降序排列，权重越大越靠前
-- 可以在 `src/content/spec/friends.md` 中编写友链页面下方的自定义内容
 :::
