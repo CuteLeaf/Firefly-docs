@@ -150,12 +150,12 @@ export default defineConfig({
 ```
 
 ::: warning
-No editing needed, if the GitHub Pages set a custom domain or the repo is named `<username>.github.io`
+No editing needed for `base`, if the GitHub Pages set a custom domain or the repo is named `<username>.github.io`
 :::
 
 ## Cloudflare Workers
 
-[Cloudflare Workers](https://workers.cloudflare.com) offers free serverless edge computing. That can alse use to host static site.
+[Cloudflare Workers](https://workers.cloudflare.com) offers free serverless edge computing. That can also use to host static site.
 
 ### Option 1: Via Cloudflare Dashboard
 
