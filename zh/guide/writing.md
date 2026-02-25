@@ -52,6 +52,8 @@ draft: false
 | `licenseName` | `string` | 否 | 自定义许可证名称 |
 | `licenseUrl` | `string` | 否 | 自定义许可证链接 |
 | `sourceLink` | `string` | 否 | 文章来源链接 |
+| `password` | `string` | 否 | 文章密码，设置后文章将被加密保护，详见 [文章加密](./password) |
+| `passwordHint` | `string` | 否 | 密码提示，显示在密码输入框上方 |
 
 ### 封面图片路径
 

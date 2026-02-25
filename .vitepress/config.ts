@@ -62,6 +62,7 @@ export default defineConfig({
                 { text: '代码块', link: '/zh/guide/code-block' },
                 { text: '评论系统', link: '/zh/guide/comment' },
                 { text: '封面图片', link: '/zh/guide/cover-image' },
+                { text: '文章加密', link: '/zh/guide/password' },
                 { text: '音乐播放器', link: '/zh/guide/music' },
                 
                 
@@ -142,6 +143,7 @@ export default defineConfig({
                 { text: 'Code Block', link: '/en/guide/code-block' },
                 { text: 'Comment System', link: '/en/guide/comment' },
                 { text: 'Music Player', link: '/en/guide/music' },
+                { text: 'Encryption Post', link: '/en/guide/password' },
                 { text: 'Cover Image', link: '/en/guide/cover-image' },
               ],
             },

@@ -52,6 +52,8 @@ draft: false
 | `licenseName` | `string` | No | Custom license name |
 | `licenseUrl` | `string` | No | Custom license URL |
 | `sourceLink` | `string` | No | Source/reference link |
+| `password` | `string` | No | Post password. When set, the post will be encrypted. See [Post Encryption](./password) |
+| `passwordHint` | `string` | No | Password hint displayed above the input field |
 
 ### Cover Image Path
 
