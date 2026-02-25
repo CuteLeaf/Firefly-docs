@@ -163,7 +163,34 @@ Bangumi 的数据为编译时获取，不是实时数据。`dev` 调试时只获
 |------|------|--------|------|
 | `imageOptimization.formats` | `string` | `"webp"` | 输出格式：`"avif"`、`"webp"`、`"both"`（推荐） |
 | `imageOptimization.quality` | `number` | `85` | 压缩质量 (1-100)，推荐 70-85 |
+| `imageOptimization.noReferrerDomains` | `string[]` | `[]` | 需要添加防盗链处理的域名列表，支持通配符 `*` |
 
 ::: warning
 Astro 仅能对 `src` 目录下的图像进行优化。`src` 目录下的图像越多，构建时间越长。
 :::
+
+### 防盗链处理
+
+部分图床或 CDN（如 B站图床）会通过检查 `Referer` 请求头来实施防盗链策略，导致在博客中引用这些图片时返回 403 错误。
+
+配置 `noReferrerDomains` 后，Firefly 会自动为匹配域名的 `<img>` 标签添加 `referrerpolicy="no-referrer"` 属性，使浏览器在请求图片时不发送 Referer 头，从而绕过防盗链限制。
+
+```ts
+imageOptimization: {
+  formats: "webp",
+  quality: 85,
+  noReferrerDomains: [
+    "i0.hdslb.com",     // B站图床
+    "i1.hdslb.com",
+    "i2.hdslb.com",
+    "*.bilibili.com",   // 支持通配符
+  ],
+},
+```
+
+::: tip
+- 仅对 `http://` 或 `https://` 开头的外部图片生效，不影响本地图片
+- 仅影响匹配域名的 `<img>` 标签，不影响其他链接的 referrer 行为
+- Markdown 中带有 alt 文本的图片仍然会正常生成 `<figcaption>`
+:::
+

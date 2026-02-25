@@ -155,7 +155,33 @@ Bangumi data is fetched at build time. During `dev` only one page of data is fet
 |----------|------|---------|-------------|
 | `imageOptimization.formats` | `string` | `"webp"` | Output format: `"avif"`, `"webp"`, `"both"` (recommended) |
 | `imageOptimization.quality` | `number` | `85` | Compression quality (1-100), recommended 70-85 |
+| `imageOptimization.noReferrerDomains` | `string[]` | `[]` | Domains requiring anti-hotlinking handling, supports wildcard `*` |
 
 ::: warning
 Astro can only optimize images in the `src` directory. More images means longer build times.
+:::
+
+### Anti-Hotlinking (Referrer Policy)
+
+Some image hosts or CDNs (e.g. Bilibili CDN) enforce hotlink protection by checking the `Referer` request header, causing 403 errors when their images are embedded in your blog.
+
+By configuring `noReferrerDomains`, Firefly will automatically add a `referrerpolicy="no-referrer"` attribute to `<img>` tags matching the specified domains, preventing the browser from sending the Referer header and bypassing hotlink protection.
+
+```ts
+imageOptimization: {
+  formats: "webp",
+  quality: 85,
+  noReferrerDomains: [
+    "i0.hdslb.com",     // Bilibili CDN
+    "i1.hdslb.com",
+    "i2.hdslb.com",
+    "*.bilibili.com",   // Wildcard support
+  ],
+},
+```
+
+::: tip
+- Only applies to external images starting with `http://` or `https://`, local images are not affected
+- Only affects `<img>` tags with matching domains, does not change referrer behavior for other links
+- Images with alt text in Markdown will still generate `<figcaption>` as expected
 :::
