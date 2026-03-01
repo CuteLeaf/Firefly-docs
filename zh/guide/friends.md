@@ -13,6 +13,7 @@
 | `title` | `string` | `""` | 页面标题，留空则使用 i18n 中的翻译 |
 | `description` | `string` | `""` | 页面描述，留空则使用 i18n 中的翻译 |
 | `showCustomContent` | `boolean` | `true` | 是否显示底部自定义内容（friends.mdx） |
+| `randomizeSort` | `boolean` | `false` | 是否开启随机排序配置，如果开启，就会忽略权重规则，构建时进行一次随机排序 |
 
 ## 友链项属性
 
@@ -36,6 +37,8 @@ export const friendsPageConfig: FriendsPageConfig = {
   description: "",
   // 是否显示底部自定义内容（friends.mdx 中的内容）
   showCustomContent: true,
+  // 是否开启随机排序配置，如果开启，就会忽略权重规则，构建时进行一次随机排序
+  randomizeSort: false,
 };
 
 export const friendsConfig: FriendLink[] = [

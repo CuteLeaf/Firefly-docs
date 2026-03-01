@@ -13,6 +13,7 @@ The friends configuration manages the friend links page display.
 | `title` | `string` | `""` | Page title, uses i18n translation if empty |
 | `description` | `string` | `""` | Page description, uses i18n translation if empty |
 | `showCustomContent` | `boolean` | `true` | Whether to show custom content at the bottom (friends.mdx) |
+| `randomizeSort` | `boolean` | `false` | Whether to enable random sort. If true, ignores weight and randomizes order once during build |
 
 ## Friend Link Properties
 
@@ -36,6 +37,8 @@ export const friendsPageConfig: FriendsPageConfig = {
   description: "",
   // Whether to show custom content (friends.mdx)
   showCustomContent: true,
+  // Whether to enable random sort
+  randomizeSort: false,
 };
 
 export const friendsConfig: FriendLink[] = [
