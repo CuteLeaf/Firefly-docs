@@ -33,6 +33,19 @@ pluginCollapsible: {
 },
 ```
 
+## Language Badge
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `pluginLanguageBadge.enable` | `boolean` | `true` | Enable language badge |
+
+```ts
+// Language Badge Plugin Config
+pluginLanguageBadge: {
+  enable: true, // Enable language badge
+},
+```
+
 ::: warning
 Restart the Astro dev server after changing this configuration.
 :::
