@@ -77,6 +77,7 @@ card: {
 | `navbar.logo` | `object` | - | 导航栏 Logo，详见下方 |
 | `navbar.title` | `string` | `"Firefly"` | 导航栏标题 |
 | `navbar.widthFull` | `boolean` | `false` | 导航栏是否占满屏幕宽度 |
+| `navbar.menuAlign` | `string` | `"center"` | 桌面端导航菜单对齐方式：`"left"` 或 `"center"` |
 | `navbar.followTheme` | `boolean` | `false` | 导航栏图标和标题是否跟随主题色 |
 
 Logo 支持四种类型：

@@ -121,7 +121,24 @@ Wave animation affects page performance. Enable based on your needs.
 
 | Property | Type | Default | Description |
 |----------|------|---------|-------------|
+| `overlay.switchable` | `boolean \| { opacity, blur, cardOpacity }` | `false` (if omitted) | Whether users can adjust overlay settings in the display panel. Can be a single switch or per-item switches |
 | `overlay.zIndex` | `number` | `-1` | Z-index |
 | `overlay.opacity` | `number` | `0.8` | Wallpaper opacity (0-1) |
-| `overlay.blur` | `number` | `1` | Background blur (px) |
+| `overlay.blur` | `number` | `3` | Background blur (px) |
 | `overlay.cardOpacity` | `number` | `0.6` | Card background opacity (0-1). Lower values make cards more transparent |
+
+You can control switching behavior in two ways:
+
+```ts
+overlay: {
+  // Option 1: one switch for all overlay settings
+  switchable: true,
+
+  // Option 2: per-item control
+  // switchable: {
+  //   opacity: true,
+  //   blur: true,
+  //   cardOpacity: true,
+  // },
+}
+```

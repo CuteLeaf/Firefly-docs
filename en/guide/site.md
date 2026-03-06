@@ -69,6 +69,7 @@ card: {
 | `navbar.logo` | `object` | - | Navbar logo, see below |
 | `navbar.title` | `string` | `"Firefly"` | Navbar title |
 | `navbar.widthFull` | `boolean` | `false` | Whether navbar takes full width |
+| `navbar.menuAlign` | `string` | `"center"` | Desktop menu alignment: `"left"` or `"center"` |
 | `navbar.followTheme` | `boolean` | `false` | Whether navbar icon and title follow theme color |
 
 Logo supports four types:

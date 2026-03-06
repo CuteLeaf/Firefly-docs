@@ -123,7 +123,24 @@ src: {
 
 | 属性 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
+| `overlay.switchable` | `boolean \| { opacity, blur, cardOpacity }` | `false`（未配置时） | 是否允许访客在显示设置面板中调整透明模式参数。支持总开关或分项开关 |
 | `overlay.zIndex` | `number` | `-1` | 层级 |
 | `overlay.opacity` | `number` | `0.8` | 壁纸透明度（0-1） |
-| `overlay.blur` | `number` | `1` | 背景模糊程度（px） |
+| `overlay.blur` | `number` | `3` | 背景模糊程度（px） |
 | `overlay.cardOpacity` | `number` | `0.6` | 卡片背景透明度（0-1），值越小卡片越透明 |
+
+`overlay.switchable` 支持两种写法：
+
+```ts
+overlay: {
+  // 方式1：整体开关，控制所有透明设置项
+  switchable: true,
+
+  // 方式2：分项开关，分别控制每个设置项
+  // switchable: {
+  //   opacity: true,
+  //   blur: true,
+  //   cardOpacity: true,
+  // },
+}
+```
