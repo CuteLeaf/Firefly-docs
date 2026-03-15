@@ -165,6 +165,27 @@ Bangumi 的数据为编译时获取，不是实时数据。`dev` 调试时只获
 |------|------|--------|------|
 | `analytics.googleAnalyticsId` | `string` | `""` | Google Analytics ID |
 | `analytics.microsoftClarityId` | `string` | `""` | Microsoft Clarity ID |
+| `analytics.la51Analytics.Id` | `string` | `""` | 51la 统计 ID |
+| `analytics.la51Analytics.sdkUrl` | `string` | `""` | 自定义 SDK 地址（留空使用默认地址） |
+| `analytics.la51Analytics.ck` | `string` | `""` | 多个统计 ID 的数据分离标识 |
+| `analytics.la51Analytics.autoTrack` | `boolean` | `false` | 是否开启事件分析功能 |
+| `analytics.la51Analytics.hashMode` | `boolean` | `false` | 是否开启 Hash 路由模式 |
+| `analytics.la51Analytics.screenRecord` | `boolean` | `true` | 是否开启网站录屏功能 |
+
+```ts
+analytics: {
+  googleAnalyticsId: "",
+  microsoftClarityId: "",
+  la51Analytics: {
+    Id: "",
+    sdkUrl: "",
+    ck: "",
+    autoTrack: false,
+    hashMode: false,
+    screenRecord: true,
+  },
+},
+```
 
 ## 图像优化
 

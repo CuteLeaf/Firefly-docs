@@ -157,6 +157,27 @@ Bangumi data is fetched at build time. During `dev` only one page of data is fet
 |----------|------|---------|-------------|
 | `analytics.googleAnalyticsId` | `string` | `""` | Google Analytics ID |
 | `analytics.microsoftClarityId` | `string` | `""` | Microsoft Clarity ID |
+| `analytics.la51Analytics.Id` | `string` | `""` | 51la analytics ID |
+| `analytics.la51Analytics.sdkUrl` | `string` | `""` | Custom SDK URL (leave empty to use default) |
+| `analytics.la51Analytics.ck` | `string` | `""` | Data separation identifier for multiple statistics IDs |
+| `analytics.la51Analytics.autoTrack` | `boolean` | `false` | Enable event analysis |
+| `analytics.la51Analytics.hashMode` | `boolean` | `false` | Enable hash route mode |
+| `analytics.la51Analytics.screenRecord` | `boolean` | `true` | Enable session recording |
+
+```ts
+analytics: {
+  googleAnalyticsId: "",
+  microsoftClarityId: "",
+  la51Analytics: {
+    Id: "",
+    sdkUrl: "",
+    ck: "",
+    autoTrack: false,
+    hashMode: false,
+    screenRecord: true,
+  },
+},
+```
 
 ## Image Optimization
 
