@@ -71,6 +71,7 @@ card: {
 | `navbar.widthFull` | `boolean` | `false` | Whether navbar takes full width |
 | `navbar.menuAlign` | `string` | `"center"` | Desktop menu alignment: `"left"` or `"center"` |
 | `navbar.followTheme` | `boolean` | `false` | Whether navbar icon and title follow theme color |
+| `navbar.stickyNavbar` | `boolean` | `true` | Keep navbar fixed at the top and always visible |
 
 Logo supports four types:
 
@@ -78,6 +79,21 @@ Logo supports four types:
 2. **public directory image** (no optimization): `{ type: "image", value: "/assets/images/logo.webp", alt: "Logo" }`
 3. **src directory image** (auto-optimized, recommended): `{ type: "image", value: "assets/images/logo.webp", alt: "Logo" }`
 4. **Remote image**: `{ type: "url", value: "https://example.com/logo.png", alt: "Logo" }`
+
+```ts
+navbar: {
+  logo: {
+    type: "image",
+    value: "assets/images/firefly.png",
+    alt: "🍀",
+  },
+  title: "Firefly",
+  widthFull: false,
+  menuAlign: "center",
+  followTheme: false,
+  stickyNavbar: true,
+},
+```
 
 ## Favicon
 

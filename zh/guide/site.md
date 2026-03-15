@@ -79,6 +79,7 @@ card: {
 | `navbar.widthFull` | `boolean` | `false` | 导航栏是否占满屏幕宽度 |
 | `navbar.menuAlign` | `string` | `"center"` | 桌面端导航菜单对齐方式：`"left"` 或 `"center"` |
 | `navbar.followTheme` | `boolean` | `false` | 导航栏图标和标题是否跟随主题色 |
+| `navbar.stickyNavbar` | `boolean` | `true` | 导航栏是否固定在顶部并始终可见 |
 
 Logo 支持四种类型：
 
@@ -86,6 +87,21 @@ Logo 支持四种类型：
 2. **public 目录图片**（不优化）：`{ type: "image", value: "/assets/images/logo.webp", alt: "Logo" }`
 3. **src 目录图片**（自动优化，推荐）：`{ type: "image", value: "assets/images/logo.webp", alt: "Logo" }`
 4. **网络图片**：`{ type: "url", value: "https://example.com/logo.png", alt: "Logo" }`
+
+```ts
+navbar: {
+  logo: {
+    type: "image",
+    value: "assets/images/firefly.png",
+    alt: "🍀",
+  },
+  title: "Firefly",
+  widthFull: false,
+  menuAlign: "center",
+  followTheme: false,
+  stickyNavbar: true,
+},
+```
 
 ## Favicon
 
