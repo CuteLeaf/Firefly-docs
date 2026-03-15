@@ -157,6 +157,8 @@ Bangumi data is fetched at build time. During `dev` only one page of data is fet
 |----------|------|---------|-------------|
 | `analytics.googleAnalyticsId` | `string` | `""` | Google Analytics ID |
 | `analytics.microsoftClarityId` | `string` | `""` | Microsoft Clarity ID |
+| `analytics.umamiAnalytics.websiteId` | `string` | `""` | Umami website ID |
+| `analytics.umamiAnalytics.scriptUrl` | `string` | `"https://cloud.umami.is/script.js"` | Umami script URL (supports self-hosted Umami) |
 | `analytics.la51Analytics.Id` | `string` | `""` | 51la analytics ID |
 | `analytics.la51Analytics.sdkUrl` | `string` | `""` | Custom SDK URL (leave empty to use default) |
 | `analytics.la51Analytics.ck` | `string` | `""` | Data separation identifier for multiple statistics IDs |
@@ -168,6 +170,10 @@ Bangumi data is fetched at build time. During `dev` only one page of data is fet
 analytics: {
   googleAnalyticsId: "",
   microsoftClarityId: "",
+  umamiAnalytics: {
+    websiteId: "",
+    scriptUrl: "https://cloud.umami.is/script.js",
+  },
   la51Analytics: {
     Id: "",
     sdkUrl: "",
@@ -178,6 +184,8 @@ analytics: {
   },
 },
 ```
+
+If you use a self-hosted Umami instance, set `analytics.umamiAnalytics.scriptUrl` to your own script endpoint.
 
 ## Image Optimization
 

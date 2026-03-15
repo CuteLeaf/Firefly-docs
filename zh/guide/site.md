@@ -165,6 +165,8 @@ Bangumi 的数据为编译时获取，不是实时数据。`dev` 调试时只获
 |------|------|--------|------|
 | `analytics.googleAnalyticsId` | `string` | `""` | Google Analytics ID |
 | `analytics.microsoftClarityId` | `string` | `""` | Microsoft Clarity ID |
+| `analytics.umamiAnalytics.websiteId` | `string` | `""` | Umami 网站 ID |
+| `analytics.umamiAnalytics.scriptUrl` | `string` | `"https://cloud.umami.is/script.js"` | Umami 脚本地址（支持自建 Umami） |
 | `analytics.la51Analytics.Id` | `string` | `""` | 51la 统计 ID |
 | `analytics.la51Analytics.sdkUrl` | `string` | `""` | 自定义 SDK 地址（留空使用默认地址） |
 | `analytics.la51Analytics.ck` | `string` | `""` | 多个统计 ID 的数据分离标识 |
@@ -176,6 +178,10 @@ Bangumi 的数据为编译时获取，不是实时数据。`dev` 调试时只获
 analytics: {
   googleAnalyticsId: "",
   microsoftClarityId: "",
+  umamiAnalytics: {
+    websiteId: "",
+    scriptUrl: "https://cloud.umami.is/script.js",
+  },
   la51Analytics: {
     Id: "",
     sdkUrl: "",
@@ -186,6 +192,8 @@ analytics: {
   },
 },
 ```
+
+如果你使用自建 Umami，请将 `analytics.umamiAnalytics.scriptUrl` 改为你自己的脚本地址。
 
 ## 图像优化
 
